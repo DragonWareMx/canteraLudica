@@ -1,0 +1,163 @@
+.background-cover-img{
+    background-image: url('/img/imgs/img8.jpg');
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+    margin-top:10px;
+    padding-top: 0px;
+}
+.recetas_content{
+    width: 100%;
+    background: rgba(29, 163, 168, 0.8);
+    padding-top: 75px;
+}
+.img_recetas{
+    width: 245px;
+    height: 240px; 
+    object-fit: cover;
+}
+.padding-remove{
+    padding: 0px 0px 0px 0px !important;
+}
+.height-max{
+    height:max-content !important;
+}
+.recetas-portada-txt{
+    margin-bottom: 40px;
+    margin: right 5px;
+}
+.receta-image{
+    width:100%;
+    height:180px;
+    object-fit: cover;
+}
+.receta-name{
+    font-family: Oxygen !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    line-height: 25px !important;
+    color: #474747 !important;
+}
+.receta-desc{
+    font-family: Oxygen !important;
+    font-style: normal !important;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #7E7E7E;
+    margin-top:4px !important;
+    margin-bottom: 20px !important;
+}
+.button-receta{
+    font-family: Atma !important;
+    color: #9F9F9F !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+    border: 1px solid #E3E3E3 !important;
+    box-sizing: border-box !important;
+    border-radius: 4px;
+    padding-left:30px !important;
+    padding-right:30px !important;
+    transition:all ease-in-out 0.25s !important;
+}
+.button-receta:hover{
+    background-color:#1DA3A8 !important;
+    border: 1px solid #1DA3A8 !important;
+    color:white !important;
+    transition:all ease-in-out 0.25s !important;
+}
+
+/* RECETA-------------------- */
+.sub-div-receta{
+    font-family: Atma;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    color: #1DA3A8;
+}
+.navigate-back{
+    display:flex;
+    justify-content: flex-end;
+}
+.navigate-back a{
+    color:#7E7E7E;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:max-content;
+}
+.descrip-receta{
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #7E7E7E;
+}
+.a-despla{
+    margin-top: 25px;;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color:#7E7E7E;
+    width:max-content;
+    display:flex;
+    align-items: center;
+    text-decoration: none;
+}
+.title-receta{
+    font-family: Atma;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 40px;
+    color: #1DA3A8;
+    margin-bottom: 10px;
+}
+.grid-img-producto img{
+    width:60px;
+    max-height:90px;
+    object-fit:cover;
+    margin:25px;
+    margin-bottom:0px;
+}
+.grid-ingredientes{
+    background-color: #FFDE59;
+    padding:25px;
+}
+.list-ingredients{
+    font-family: Oxygen !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #7E7E7E;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+ol li::marker {
+    font-size: 16px ;
+}
+
+
+
+.a-despla:hover, .a-despla:focus, .navigate-back a:hover, .navigate-back a:focus{
+    transition:all ease-in-out 0.25s;
+    color: #454545;
+}
+
+@media(max-width:600px){
+    .img_recetas{
+        width: 185px;
+        height: 180px; 
+    }
+    .recetas-portada-txt{
+        margin-bottom: 0px;
+    }
+}

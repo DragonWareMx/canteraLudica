@@ -1,0 +1,395 @@
+.footer-main{
+    width: 100%;
+    min-height: 108px;
+    background-color: #1DA3A8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.footer-left{
+    width: 30%;
+    align-items: flex-end;
+    display: flex;
+}
+
+.footer-middle{
+    width: 30%;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.footer-right{
+    width: 30%;
+    text-align: end;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.footer-icons{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto 11px auto;
+}
+
+.footer-right a{
+    text-decoration: none;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+
+    color: #FFFFFF;
+}
+
+.footer-come{
+    font-family: "Fredoka One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: #FFDE59;
+    margin-top: 10px;
+}
+
+.footer-copy{
+    font-family: Atma;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1200px) {
+    .footer-icons {
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .footer-icons {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-icons {
+      width: 40%;
+    }
+    .footer-left, .footer-right, .footer-middle{
+        width: 100%;
+    }
+
+    .footer-left{
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .footer-middle{
+      margin-bottom: 15px;
+    }
+
+    .footer-right{
+      justify-content: center;
+    }
+  }
+
+
+  /* Aqui empiezan los estilos de la navbar :v */
+  .main-navbar{
+    height: 137px;
+    width: 100%;
+    background-color:  #FFFFFF;
+    padding: 0px 5%;
+    position: fixed;
+    top: 0px;
+    transition: height 0.3s;
+  }
+
+  .navbar-sup{
+    height: 78px;
+    width: 100%;
+    border-bottom: 1px solid #D3D3D3;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .navbar-inf{
+    height: 59px;
+    width: 100%;
+    display: flex;
+    align-content: center;
+  }
+
+  .div-logo{
+    font-family: Fredoka One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FFDE59;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    left: calc((100% / 2) - 108.5px);
+  }
+
+  .div-logo a{
+    text-decoration: none;
+    color: #FFDE59;
+  }
+
+  .div-iconos{
+    display: flex;
+    align-items: center;
+  }
+
+  .div-redes{
+    display: flex;
+    align-items: center;
+  }
+
+  .div-redes .icono{
+    text-decoration: none;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+
+    color: #A3A3A3;
+    display: flex;
+    align-items: center;
+  }
+
+  .div-redes .icono img{
+    margin-right: 6px;
+  }
+
+  .links{
+    width: 60%;
+    margin: 0px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .links a{
+    text-decoration: none;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+
+    color: #1DA3A8;
+    /* esto es el efecto ese feo xd */
+    transform: scale(0.95);
+    transition: all 700ms;
+  }
+
+  .links a:hover{
+    border-bottom: 2px solid #FFDE59;
+    /* esto es el efecto ese feo xd */
+    transform: scale(1.05);
+  }
+
+  .links-hide{
+    width: 50%;
+    margin: 0px auto;
+
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .links-hide a{
+    text-decoration: none;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+
+    color: #1DA3A8;
+    /* esto es el efecto ese feo xd */
+    transform: scale(0.95);
+    transition: all 700ms;
+  }
+
+  .links-hide a:hover{
+    border-bottom: 2px solid #FFDE59;
+    /* esto es el efecto ese feo xd */
+    transform: scale(1.05);
+  }
+
+  .content{
+    padding-top: 137px;
+    min-height: calc(100vh - 131px);
+    /* transition: height 0.2s; */
+  }
+/*Aqui empiezan los estilos para que se vea chida la navbar chiquita*/
+  .main-navbar.shrinked{
+    height: 76px;
+    transition: height 0.3s;
+  }
+
+  .main-navbar.shrinked .navbar-sup{
+    height: 76px;
+    border-bottom: 0px;
+  }
+
+  .main-navbar.shrinked .navbar-inf{
+    display: none;
+  }
+  .main-navbar.main-navbar.shrinked .div-logo{
+    position: static;
+  }
+  .main-navbar.main-navbar.shrinked .div-redes{
+    display: none;
+  }
+
+  .main-navbar.main-navbar.shrinked .links-hide{
+    display: flex;
+  }
+  /* .content.shrinked{
+    margin-top: 76px;
+    transition: height 0.2s;
+  } */
+
+  /*  Menu para celular */
+  header.mobile{
+    width: 100%;
+    height: 60px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(200, 200, 200, 0.25);
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    justify-content: space-between;
+    z-index: 999;
+  }
+
+  .mobile .left{
+    float: left;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+  }
+
+  .mobile .right{
+    float: right;
+    display: flex;
+    align-content: flex-end;
+    padding-right: 1vw;
+  }
+
+  .mobile .left svg{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: 12px;
+  }
+
+  .div-logo-m{
+    font-family: Fredoka One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 35px;
+    color: #FFDE59;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 11.5px;
+    left: calc((100% / 2) - 73.615px);
+  }
+
+  .div-logo-m a{
+    text-decoration: none;
+    color: #FFDE59;
+  }
+
+ .navigation{
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #1DA3A8;
+    margin: 0;
+    margin-left: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 998;
+    top: 60px;
+    display: none;
+}
+
+  .navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.navigation ul li{
+    display: inline-block;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    width: 100%;
+    padding-left: 10vw;
+}
+
+.navigation ul li a{
+  text-decoration: none;
+    font-family: Atma;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+
+    color: #FFDE59;
+    /* esto es el efecto ese feo xd */
+    transform: scale(0.95);
+    transition: all 700ms;
+}
+
+.navigation ul li a:hover{
+  border-bottom: 2px solid #FFDE59;
+    /* esto es el efecto ese feo xd */
+  transform: scale(1.05);
+}
+
+@media (max-width: 850px) {
+  .content {
+    padding-top: 60px !important;
+  }
+
+  header.mobile{
+    display: flex !important;
+  }
+
+  .main-navbar{
+    display: none !important;
+  }
+
+  .navigation{
+    display: block !important;
+  }
+}

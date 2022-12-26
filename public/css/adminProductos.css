@@ -1,0 +1,49 @@
+.img-product-view{
+    object-fit: cover;
+    width: 100%;
+    max-height: 250px;
+}
+.item-product-data{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px !important;
+    flex-wrap: wrap;
+}
+.title-item-info{
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 14px;
+    color: #7E7E7E;
+}
+.item-info-txt{
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #474747;
+    padding-left: 10px ;
+}
+.chip-categoria{
+    background-color: #1da3a828 !important;
+    margin-top: 5px;
+    margin-right: 5px;
+    color:#505050 !important;
+}
+
+.autocompleteProductos{
+    width: 100%;
+    margin-right: 45px;
+}
+
+
+@media(max-width:600px){
+    .title-item-info{
+        margin-bottom: 7px !important;
+    }
+    .item-info-txt{
+        padding-left: 0px;
+    }
+}
