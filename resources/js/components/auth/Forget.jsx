@@ -1,13 +1,18 @@
-import { React, useState } from 'react';
-import { withStyles, makeStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { Dialog, Button, TextField, Snackbar, Portal } from '@material-ui/core';
-import { InertiaLink, usePage } from '@inertiajs/inertia-react'
-import { Inertia } from '@inertiajs/inertia'
-import MuiAlert from '@material-ui/lab/Alert';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import { React, useState } from "react";
+import {
+    withStyles,
+    makeStyles,
+    createMuiTheme,
+    MuiThemeProvider,
+} from "@material-ui/core/styles";
+import { Dialog, Button, TextField, Snackbar, Portal } from "@material-ui/core";
+import { InertiaLink, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
+import MuiAlert from "@material-ui/lab/Alert";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 
-import teal from '@material-ui/core/colors/teal';
+import teal from "@material-ui/core/colors/teal";
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -17,20 +22,20 @@ const theme = createMuiTheme({
     palette: {
         secondary: {
             // light: will be calculated from palette.primary.main,
-            main: '#ff4400',
+            main: "#ff4400",
             // dark: will be calculated from palette.primary.main,
             // contrastText: will be calculated to contrast with palette.primary.main
         },
         primary: {
-            light: '#0066ff',
-            main: teal[500],
+            light: "#0066ff",
+            main: "#ff6607",
             // dark: will be calculated from palette.secondary.main,
-            contrastText: '#ffcc00',
+            contrastText: "#ffcc00",
         },
         // error: will use the default color
     },
     status: {
-        danger: 'orange',
+        danger: "orange",
     },
 });
 
@@ -44,34 +49,34 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "20px 33px"
+        padding: "20px 33px",
     },
     buttonDial: {
-        background: '#1DA3A8',
-        color: '#FFFFFF',
+        background: "#313131",
+        color: "#d9d9d9",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '13px',
-        lineHeight: '21px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "13px",
+        lineHeight: "21px",
 
-        minWidth: '220px',
-        maxWidth: '319px',
-        height: '45px',
+        minWidth: "220px",
+        maxWidth: "319px",
+        height: "45px",
         width: "100%",
 
         border: "1px solid #E3E3E3",
 
-        '&:hover': {
-            background: '#1DA3A8',
-            color: '#FFFFFF',
+        "&:hover": {
+            background: "#ff6607",
+            color: "#fafafa",
         },
     },
     inertiaButton: {
         width: "90%",
-        minWidth: '220px',
-        maxWidth: '319px',
+        minWidth: "220px",
+        maxWidth: "319px",
 
         height: "fit-content",
         backgroundColor: "transparent",
@@ -83,88 +88,88 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
     },
     cardText: {
-        color: '#878787',
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '15px',
-        lineHeight: '24px',
+        color: "#313131",
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "15px",
+        lineHeight: "24px",
         width: "90%",
-        textAlign: "center"
+        textAlign: "center",
     },
     cardTitle: {
-        color: '#1DA3A8',
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: '500',
-        fontSize: '18px',
-        lineHeight: '29px',
+        color: "#ff6607",
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: "18px",
+        lineHeight: "29px",
         width: "90%",
-        textAlign: "center"
+        textAlign: "center",
     },
     cardLink: {
-        color: '#1DA3A8',
+        color: "#ff6607",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: '400',
-        fontSize: '14px',
-        lineHeight: '23px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "400",
+        fontSize: "14px",
+        lineHeight: "23px",
         textAlign: "center",
         textDecoration: "none",
         marginRight: "2px",
-        '&:hover': {
-            fontWeight: "600"
+        "&:hover": {
+            fontWeight: "600",
         },
     },
     formulario: {
         padding: "0px",
         marginBottom: "20px",
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap'
+        display: "flex",
+        justifyContent: "center",
+        flexWrap: "wrap",
     },
     textField: {
-        minWidth: '250px',
-        maxWidth: '350px',
+        minWidth: "250px",
+        maxWidth: "350px",
         fontFamily: "Atma",
-        fontStyle: 'normal',
-        fontWeight: '400',
-        fontSize: '15px',
-        lineHeight: '23px',
-        color: '#333333',
-        marginTop: '20px',
-        marginBottom: '20px',
+        fontStyle: "normal",
+        fontWeight: "400",
+        fontSize: "15px",
+        lineHeight: "23px",
+        color: "#333333",
+        marginTop: "20px",
+        marginBottom: "20px",
         "&:not(.Mui-disabled):hover::before": {
-            borderColor: "#1DA3A8"
-        }
+            borderColor: "#313131",
+        },
     },
     formTextLabel: {
-        fontFamily: 'Atma',
-        fontSize: '14px',
-        lineHeight: '19.5px',
-        color: '#9E9E9E'
+        fontFamily: "Atma",
+        fontSize: "14px",
+        lineHeight: "19.5px",
+        color: "#9E9E9E",
     },
     helperText: {
-        marginTop: '-12px',
-        fontFamily: 'Atma',
-        fontSize: '14px',
+        marginTop: "-12px",
+        fontFamily: "Atma",
+        fontSize: "14px",
     },
     closeButton: {
-        position: 'absolute',
+        position: "absolute",
         right: theme.spacing(1),
         top: theme.spacing(1),
-        color: theme.palette.grey[500],
+        color: "#313131",
     },
 }));
 
 export default function Forget({ dialog, handleClose, openLogin }) {
-    const { errors, flash } = usePage().props
+    const { errors, flash } = usePage().props;
     const classes = useStyles();
     const [values, setValues] = useState({
-        email: '',
-        password: '',
-        error: false
+        email: "",
+        password: "",
+        error: false,
     });
 
     const [open, setOpen] = useState(true);
@@ -174,7 +179,7 @@ export default function Forget({ dialog, handleClose, openLogin }) {
     };
 
     const handleCloseSnack = (event, reason) => {
-        if (reason === 'clickaway') {
+        if (reason === "clickaway") {
             return;
         }
 
@@ -183,34 +188,32 @@ export default function Forget({ dialog, handleClose, openLogin }) {
 
     function handleChange(e) {
         const key = e.target.id;
-        const value = e.target.value
-        setValues(values => ({
+        const value = e.target.value;
+        setValues((values) => ({
             ...values,
             [key]: value,
-        }))
+        }));
     }
 
     function handleSubmit(e) {
-        e.preventDefault()
-        Inertia.post('/password/email', values, {
+        e.preventDefault();
+        Inertia.post("/password/email", values, {
             preserveScroll: true,
-            onSuccess: () => {
-
-            },
+            onSuccess: () => {},
             onError: () => {
-                setValues(values => ({
+                setValues((values) => ({
                     ...values,
-                    error: true
+                    error: true,
                 }));
-            }
-        })
+            },
+        });
     }
 
     function handleCerrar() {
-        setValues(values => ({
-            email: '',
-            error: false
-        }))
+        setValues((values) => ({
+            email: "",
+            error: false,
+        }));
         handleClose();
     }
 
@@ -223,62 +226,101 @@ export default function Forget({ dialog, handleClose, openLogin }) {
                 aria-describedby="alert-dialog-description"
             >
                 <div className={classes.cardInicioSesion}>
-                    <div className={classes.cardTitle} style={{ marginTop: "15px" }}>
+                    <div
+                        className={classes.cardTitle}
+                        style={{ marginTop: "15px" }}
+                    >
                         ¿Olvidaste tu contraseña?
                     </div>
-                    <IconButton aria-label="close" className={classes.closeButton} onClick={handleCerrar}>
+                    <IconButton
+                        aria-label="close"
+                        className={classes.closeButton}
+                        onClick={handleCerrar}
+                    >
                         <CloseIcon />
                     </IconButton>
-                    <div className={classes.cardText} style={{ marginTop: "2px", marginBottom: "15px" }}>
-                        Ingresa tu correo electrónico y en breve recibirás un email con instrucciones para recuperar tu contraseña.
+                    <div
+                        className={classes.cardText}
+                        style={{ marginTop: "2px", marginBottom: "15px" }}
+                    >
+                        Ingresa tu correo electrónico y en breve recibirás un
+                        email con instrucciones para recuperar tu contraseña.
                     </div>
 
-                    <form className={classes.formulario} onSubmit={handleSubmit} id="login-form">
+                    <form
+                        className={classes.formulario}
+                        onSubmit={handleSubmit}
+                        id="login-form"
+                    >
                         <MuiThemeProvider theme={theme}>
-                            <TextField required id="email" label="Correo electrónico"
+                            <TextField
+                                required
+                                id="email"
+                                label="Correo electrónico"
                                 InputProps={{
                                     className: classes.textField,
                                 }}
                                 InputLabelProps={{
                                     classes: {
-                                        root: classes.formTextLabel
-                                    }
+                                        root: classes.formTextLabel,
+                                    },
                                 }}
                                 FormHelperTextProps={{
-                                    className: classes.helperText
+                                    className: classes.helperText,
                                 }}
                                 fullWidth={true}
                                 value={values.email}
                                 onChange={handleChange}
-                                error={errors.email && values.error == true && true}
-                                helperText={values.error == true && errors.email}
+                                error={
+                                    errors.email && values.error == true && true
+                                }
+                                helperText={
+                                    values.error == true && errors.email
+                                }
                             />
                         </MuiThemeProvider>
 
-                        <div style={{ textDecoration: "none" }} className={classes.inertiaButton} >
-                            <Button variant="contained" color="primary" type="submit" disableElevation className={classes.buttonDial}>
+                        <div
+                            style={{ textDecoration: "none" }}
+                            className={classes.inertiaButton}
+                        >
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                type="submit"
+                                disableElevation
+                                className={classes.buttonDial}
+                            >
                                 ENVIAR
                             </Button>
                         </div>
                     </form>
 
                     <div className={classes.cardText}>
-                        <Button type='button' className={classes.cardLink} onClick={openLogin}>
+                        <Button
+                            type="button"
+                            className={classes.cardLink}
+                            onClick={openLogin}
+                        >
                             Iniciar sesión
                         </Button>
                     </div>
                 </div>
             </Dialog>
 
-            {flash.status && flash.status.length > 0 &&
+            {flash.status && flash.status.length > 0 && (
                 <Portal>
-                    <Snackbar open={open} autoHideDuration={6000} onClose={handleCloseSnack}>
+                    <Snackbar
+                        open={open}
+                        autoHideDuration={6000}
+                        onClose={handleCloseSnack}
+                    >
                         <Alert onClose={handleCloseSnack} severity="success">
                             {flash.status}
                         </Alert>
                     </Snackbar>
                 </Portal>
-            }
+            )}
         </>
-    )
+    );
 }
