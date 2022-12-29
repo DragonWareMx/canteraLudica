@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
-import { IconButton, Menu, MenuItem } from '@material-ui/core';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import React, { useState } from "react";
+import { IconButton, Menu, MenuItem } from "@material-ui/core";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 
-
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import route from 'ziggy-js';
-
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import route from "ziggy-js";
 
 const useStyles = makeStyles((theme) => ({
     userbutton: {
-        position: 'relative',
+        position: "relative",
     },
     inertia: {
-        textDecoration: 'none',
-        backgroundColor: 'transparent',
-        border: 'none',
-        padding: '0px',
-        fontFamily: 'Atma',
-        fontSize: '18px',
-        color: '#1DA3A8'
-    }
+        textDecoration: "none",
+        backgroundColor: "transparent",
+        border: "none",
+        padding: "0px",
+        fontFamily: "Atma",
+        fontSize: "18px",
+        color: "#ff6607",
+    },
 }));
 
 export default function Account({ abrirLogin }) {
     const classes = useStyles();
-    const { auth, flash } = usePage().props
+    const { auth, flash } = usePage().props;
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -39,8 +37,15 @@ export default function Account({ abrirLogin }) {
     return (
         <>
             {/* ICONO DEL CARRITO */}
-            <IconButton aria-label="cart" className={classes.userbutton} onClick={handleClick}>
-                <AccountCircleIcon fontSize="large" style={{ color: '#1DA3A8' }} />
+            <IconButton
+                aria-label="cart"
+                className={classes.userbutton}
+                onClick={handleClick}
+            >
+                <AccountCircleIcon
+                    fontSize="large"
+                    style={{ color: "#313131" }}
+                />
             </IconButton>
 
             <Menu
@@ -54,27 +59,44 @@ export default function Account({ abrirLogin }) {
                 transformOrigin={{ vertical: "top", horizontal: "center" }}
                 disableScrollLock={true}
             >
-                {auth.user &&
+                {auth.user && (
                     <MenuItem onClick={handleClose}>
-                        <InertiaLink href={route('cuenta')} className={classes.inertia}>Mi cuenta</InertiaLink>
+                        <InertiaLink
+                            href={route("cuenta")}
+                            className={classes.inertia}
+                        >
+                            Mi cuenta
+                        </InertiaLink>
                     </MenuItem>
-                }
-                {auth.user && auth.user.rol == "admin" &&
+                )}
+                {auth.user && auth.user.rol == "admin" && (
                     <MenuItem onClick={handleClose}>
-                        <InertiaLink href={'/admin'} className={classes.inertia}>Administrar</InertiaLink>
+                        <InertiaLink
+                            href={"/admin"}
+                            className={classes.inertia}
+                        >
+                            Administrar
+                        </InertiaLink>
                     </MenuItem>
-                }
-                {auth.user &&
+                )}
+                {auth.user && (
                     <MenuItem onClick={handleClose}>
-                        <InertiaLink href={route('logout')} method={'post'} as={'button'} className={classes.inertia}>Cerrar sesión</InertiaLink>
+                        <InertiaLink
+                            href={route("logout")}
+                            method={"post"}
+                            as={"button"}
+                            className={classes.inertia}
+                        >
+                            Cerrar sesión
+                        </InertiaLink>
                     </MenuItem>
-                }
-                {!auth.user &&
+                )}
+                {!auth.user && (
                     <MenuItem onClick={abrirLogin}>
                         <div className={classes.inertia}>Iniciar Sesión</div>
                     </MenuItem>
-                }
+                )}
             </Menu>
         </>
-    )
+    );
 }

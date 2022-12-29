@@ -1,75 +1,94 @@
-import { Badge, Button, ButtonBase, Card, CardActions, CardContent, CardHeader, ClickAwayListener, Divider, Dialog, Fade, Grid, IconButton, Input, InputAdornment, OutlinedInput, Drawer, Typography } from '@material-ui/core';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import React, { useEffect } from 'react';
-import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
-import Popper from '@material-ui/core/Popper';
-import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import {
+    Badge,
+    Button,
+    ButtonBase,
+    Card,
+    CardActions,
+    CardContent,
+    CardHeader,
+    ClickAwayListener,
+    Divider,
+    Dialog,
+    Fade,
+    Grid,
+    IconButton,
+    Input,
+    InputAdornment,
+    OutlinedInput,
+    Drawer,
+    Typography,
+} from "@material-ui/core";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import React, { useEffect } from "react";
+import ShoppingCartSharpIcon from "@material-ui/icons/ShoppingCartSharp";
+import Popper from "@material-ui/core/Popper";
+import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 
-import Login from '../auth/Login'
-import Register from '../auth/Register'
-import Pago from '../common/Pago'
+import Login from "../auth/Login";
+import Register from "../auth/Register";
+import Pago from "../common/Pago";
 
 //iconos
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
-import CloseSharpIcon from '@material-ui/icons/CloseSharp';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
+import CloseSharpIcon from "@material-ui/icons/CloseSharp";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
         border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 4px',
-        backgroundColor: "#FFDE59"
+        padding: "0 4px",
+        backgroundColor: "#FFDE59",
     },
 }))(Badge);
 
 const useStyles = makeStyles((theme) => ({
     cartbutton: {
-        position: 'relative',
+        position: "relative",
     },
     dropdown: {
-        position: 'absolute',
+        position: "absolute",
         top: 28,
         right: 0,
         left: 0,
         zIndex: 1,
-        border: '1px solid',
+        border: "1px solid",
         padding: theme.spacing(1),
         backgroundColor: theme.palette.background.paper,
     },
     button: {
-        background: '#1DA3A8',
+        background: "#ff6607",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '15px',
-        lineHeight: '24px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "15px",
+        lineHeight: "24px",
 
-        color: '#FFFFFF',
-        width: '100%',
-        height: '45px',
+        color: "#FFFFFF",
+        width: "100%",
+        height: "45px",
 
-        '&:hover': {
-            background: '#1DA3A8',
+        "&:hover": {
+            background: "#1DA3A8",
         },
     },
     buttonGrid: {
-        width: "90%"
+        width: "90%",
     },
     card: {
         width: "100%",
         maxWidth: 375,
         maxHeight: 900,
-        overflow: 'auto'
+        overflow: "auto",
     },
     linkcotizar: {
         marginTop: 11,
-        marginBottom: 25
+        marginBottom: 25,
     },
     img: {
-        margin: 'auto',
-        display: 'block',
+        margin: "auto",
+        display: "block",
         maxWidth: 66,
         maxHeight: 72,
     },
@@ -121,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
 
         color: "#595959",
         marginTop: 10,
-        marginRight: 10
+        marginRight: 10,
     },
     precioTotal: {
         fontFamily: "Oxygen",
@@ -133,19 +152,20 @@ const useStyles = makeStyles((theme) => ({
         color: "#1DA3A8",
         marginTop: 10,
         marginRight: 10,
-        marginLeft: 10
+        marginLeft: 10,
     },
     inputSinFlechas: {
-        "& input::-webkit-clear-button, & input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button": {
-            display: "none"
-        },
+        "& input::-webkit-clear-button, & input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button":
+            {
+                display: "none",
+            },
         "& input": {
             width: "26px",
-            textAlign: "center"
+            textAlign: "center",
         },
         height: 33,
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
     },
     cardInicioSesion: {
         width: "100%",
@@ -155,34 +175,34 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     buttonDial: {
-        background: '#1DA3A8',
-        color: '#FFFFFF',
+        background: "#1DA3A8",
+        color: "#FFFFFF",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '13px',
-        lineHeight: '21px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "13px",
+        lineHeight: "21px",
 
-        minWidth: '220px',
-        maxWidth: '319px',
-        height: '45px',
+        minWidth: "220px",
+        maxWidth: "319px",
+        height: "45px",
         width: "100%",
 
         border: "1px solid #E3E3E3",
 
-        '&:hover': {
-            background: '#1DA3A8',
-            color: '#FFFFFF',
+        "&:hover": {
+            background: "#1DA3A8",
+            color: "#FFFFFF",
         },
     },
     inertiaButton: {
         width: "90%",
-        minWidth: '220px',
-        maxWidth: '319px',
+        minWidth: "220px",
+        maxWidth: "319px",
 
         height: "fit-content",
         backgroundColor: "transparent",
@@ -194,54 +214,54 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
     },
     cardText: {
-        color: '#626262',
+        color: "#626262",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '14px',
-        lineHeight: '23px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "14px",
+        lineHeight: "23px",
         width: "90%",
-        textAlign: "center"
+        textAlign: "center",
     },
     cardLink: {
-        color: '#1DA3A8',
+        color: "#1DA3A8",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: '600',
-        fontSize: '14px',
-        lineHeight: '23px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "600",
+        fontSize: "14px",
+        lineHeight: "23px",
         textAlign: "center",
         textDecoration: "none",
         marginRight: "2px",
-        cursor: 'pointer'
+        cursor: "pointer",
     },
     inertiaButtonPlusRemove: {
         width: "fit-content",
         height: "fit-content",
         backgroundColor: "transparent",
         padding: "0px",
-        border: "none"
+        border: "none",
     },
     carritoVacioTitulo: {
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: '600',
-        fontSize: '20px',
-        lineHeight: '49px',
-        color: '#1DA3A8',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "600",
+        fontSize: "20px",
+        lineHeight: "49px",
+        color: "#1DA3A8",
     },
     carritoVacio: {
-        color: '#626262',
+        color: "#626262",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '16px',
-        lineHeight: '20px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "16px",
+        lineHeight: "20px",
         width: "90%",
-        textAlign: "center"
+        textAlign: "center",
     },
     inertiaButtonCart: {
         width: "fit-content",
@@ -250,32 +270,32 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "12px",
         marginBottom: "20px",
         padding: "0px",
-        border: "none"
+        border: "none",
     },
     buttonCart: {
-        background: 'transparent',
-        color: '#9F9F9F',
+        background: "transparent",
+        color: "#9F9F9F",
 
-        fontFamily: 'Atma',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '13px',
-        lineHeight: '21px',
+        fontFamily: "Atma",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "13px",
+        lineHeight: "21px",
 
-        width: '100%',
-        height: '38px',
+        width: "100%",
+        height: "38px",
 
         border: "1px solid #E3E3E3",
 
-        '&:hover': {
-            background: '#1DA3A8',
-            color: '#FFFFFF',
+        "&:hover": {
+            background: "#1DA3A8",
+            color: "#FFFFFF",
         },
     },
 }));
 
 export default function Cart({ bDialog }) {
-    const { auth, flash } = usePage().props
+    const { auth, flash } = usePage().props;
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -289,9 +309,8 @@ export default function Cart({ bDialog }) {
     function handleClick(event) {
         if (auth && auth.cart) {
             setOpen(true);
-        }
-        else {
-            setDialog(true)
+        } else {
+            setDialog(true);
         }
     }
 
@@ -306,7 +325,7 @@ export default function Cart({ bDialog }) {
     const handleOpenLogin = () => {
         handleDialogClose();
         setDialogLogin(true);
-    }
+    };
 
     const handleDialogRegisterClose = () => {
         setDialogRegister(false);
@@ -316,7 +335,7 @@ export default function Cart({ bDialog }) {
         handleDialogClose();
         setDialogLogin(false);
         setDialogRegister(true);
-    }
+    };
 
     const handleDialogPagoClose = () => {
         setDialogPago(false);
@@ -324,10 +343,14 @@ export default function Cart({ bDialog }) {
 
     const handleOpenPago = () => {
         setDialogPago(true);
-    }
+    };
 
     const toggleDrawer = (open) => (event) => {
-        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        if (
+            event &&
+            event.type === "keydown" &&
+            (event.key === "Tab" || event.key === "Shift")
+        ) {
             return;
         }
 
@@ -335,75 +358,98 @@ export default function Cart({ bDialog }) {
     };
 
     function calcularCantidadDeProductos(carrito) {
-        let cantidad = 0
-        carrito.forEach(producto => {
-            cantidad += producto.pivot.cantidad ?? 0
+        let cantidad = 0;
+        carrito.forEach((producto) => {
+            cantidad += producto.pivot.cantidad ?? 0;
         });
 
-        return cantidad
+        return cantidad;
     }
 
     function calcularDescuento(precio, descuento) {
-        let precioDescuento
+        let precioDescuento;
 
         if (descuento <= 100)
-            precioDescuento = precio - precio * (descuento / 100)
-        else
-            precioDescuento = 0
+            precioDescuento = precio - precio * (descuento / 100);
+        else precioDescuento = 0;
 
-        return "$" + parseFloat(precioDescuento).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " MXN"
+        return (
+            "$" +
+            parseFloat(precioDescuento).toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            }) +
+            " MXN"
+        );
     }
 
     function calcularTotalProducto(producto) {
-        let precioDescuento
+        let precioDescuento;
 
         if (producto.descuento <= 100)
-            precioDescuento = (producto.precio - producto.precio * (producto.descuento / 100)).toFixed(2)
-        else
-            precioDescuento = 0
+            precioDescuento = (
+                producto.precio -
+                producto.precio * (producto.descuento / 100)
+            ).toFixed(2);
+        else precioDescuento = 0;
 
-        if (precioDescuento < 0)
-            precioDescuento = 0
+        if (precioDescuento < 0) precioDescuento = 0;
 
-        return (precioDescuento * producto.pivot.cantidad)
+        return precioDescuento * producto.pivot.cantidad;
     }
 
     function calcularTotal(carrito) {
-        let total = 0
+        let total = 0;
 
-        carrito.forEach(producto => {
-            total += calcularTotalProducto(producto)
+        carrito.forEach((producto) => {
+            total += calcularTotalProducto(producto);
         });
 
-        return "$" + parseFloat(total).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        return (
+            "$" +
+            parseFloat(total).toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            })
+        );
     }
 
     useEffect(() => {
         if (flash.info && bDialog) {
-            setDialog(true)
+            setDialog(true);
         }
-    }, [flash])
+    }, [flash]);
 
     return (
         <>
             {/* ICONO DEL CARRITO */}
-            <IconButton aria-label="cart" className={classes.cartbutton} onClick={handleClick}>
-                <StyledBadge badgeContent={auth.cart ? calcularCantidadDeProductos(auth.cart) : 0} color="primary">
-                    <ShoppingCartSharpIcon fontSize="large" style={{ color: '#1DA3A8' }} />
+            <IconButton
+                aria-label="cart"
+                className={classes.cartbutton}
+                onClick={handleClick}
+            >
+                <StyledBadge
+                    badgeContent={
+                        auth.cart ? calcularCantidadDeProductos(auth.cart) : 0
+                    }
+                    color="primary"
+                >
+                    <ShoppingCartSharpIcon
+                        fontSize="large"
+                        style={{ color: "#313131" }}
+                    />
                 </StyledBadge>
             </IconButton>
 
             {/* CARD DEL CARRITO, AQUI SE MUESTRAN LOS ELEMENTOS EN EL CARRITO SI EL USUARIO HA INICIADO SESION */}
-            {auth && auth.user && auth.cart &&
+            {auth && auth.user && auth.cart && (
                 <Drawer
                     anchor="right"
                     open={open}
                     onClose={toggleDrawer(false)}
                     onOpen={toggleDrawer(true)}
                 >
-                    <div
-                        role="presentation"
-                    >
+                    <div role="presentation">
                         {/* CLOSE MENU */}
                         <Grid
                             container
@@ -424,82 +470,207 @@ export default function Cart({ bDialog }) {
 
                         <Divider variant="middle" />
 
-
                         {/* PRODUCTOS DEL CARRITO */}
-                        {auth.cart.length > 0 ?
+                        {auth.cart.length > 0 ? (
                             <>
-                                {auth.cart.map(producto => (
+                                {auth.cart.map((producto) => (
                                     <div key={producto.id + "carrito"}>
                                         {/* PRODUCTO */}
-                                        <Grid container style={{ maxWidth: 320, margin: 10 }}>
+                                        <Grid
+                                            container
+                                            style={{
+                                                maxWidth: 320,
+                                                margin: 10,
+                                            }}
+                                        >
                                             {/* Imagen del producto */}
                                             <Grid item xs={3}>
                                                 <ButtonBase>
-                                                    {producto.foto &&
-                                                        <img className={classes.img} alt="complex" src={"/storage/products/" + producto.foto} />
-                                                    }
+                                                    {producto.foto && (
+                                                        <img
+                                                            className={
+                                                                classes.img
+                                                            }
+                                                            alt="complex"
+                                                            src={
+                                                                "/storage/products/" +
+                                                                producto.foto
+                                                            }
+                                                        />
+                                                    )}
                                                 </ButtonBase>
                                             </Grid>
 
                                             <Grid item xs container>
                                                 {/* NOMBRE DEL PRODUCTO */}
                                                 <Grid item xs={12}>
-                                                    <InertiaLink href="/producto" style={{ textDecoration: "none" }}>
-                                                        <Typography gutterBottom className={classes.nombreProducto}>
-                                                            {producto.name.length > 100 ?
-                                                                producto.name.substring(0, 100 - 3) + "..."
-                                                                :
-                                                                producto.name
+                                                    <InertiaLink
+                                                        href="/producto"
+                                                        style={{
+                                                            textDecoration:
+                                                                "none",
+                                                        }}
+                                                    >
+                                                        <Typography
+                                                            gutterBottom
+                                                            className={
+                                                                classes.nombreProducto
                                                             }
+                                                        >
+                                                            {producto.name
+                                                                .length > 100
+                                                                ? producto.name.substring(
+                                                                      0,
+                                                                      100 - 3
+                                                                  ) + "..."
+                                                                : producto.name}
                                                         </Typography>
                                                     </InertiaLink>
                                                 </Grid>
 
                                                 {/* Precios */}
-                                                <Grid item xs={12} container spacing={1}>
-                                                    {producto.descuento > 0 ?
+                                                <Grid
+                                                    item
+                                                    xs={12}
+                                                    container
+                                                    spacing={1}
+                                                >
+                                                    {producto.descuento > 0 ? (
                                                         <>
-                                                            <Grid item >
-                                                                <Typography gutterBottom className={classes.precioDescuento} align="left">
-                                                                    {"$" + parseFloat(producto.precio).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " MXN"}
+                                                            <Grid item>
+                                                                <Typography
+                                                                    gutterBottom
+                                                                    className={
+                                                                        classes.precioDescuento
+                                                                    }
+                                                                    align="left"
+                                                                >
+                                                                    {"$" +
+                                                                        parseFloat(
+                                                                            producto.precio
+                                                                        ).toLocaleString(
+                                                                            "en-US",
+                                                                            {
+                                                                                minimumFractionDigits: 2,
+                                                                                maximumFractionDigits: 2,
+                                                                            }
+                                                                        ) +
+                                                                        " MXN"}
                                                                 </Typography>
                                                             </Grid>
-                                                            <Grid item >
-                                                                <Typography gutterBottom className={classes.precio} align="left">
-                                                                    {calcularDescuento(producto.precio, producto.descuento)}
+                                                            <Grid item>
+                                                                <Typography
+                                                                    gutterBottom
+                                                                    className={
+                                                                        classes.precio
+                                                                    }
+                                                                    align="left"
+                                                                >
+                                                                    {calcularDescuento(
+                                                                        producto.precio,
+                                                                        producto.descuento
+                                                                    )}
                                                                 </Typography>
                                                             </Grid>
                                                         </>
-                                                        :
+                                                    ) : (
                                                         <>
-                                                            <Grid item style={{ padding: 0 }}>
-                                                                <Typography gutterBottom className={classes.precioDescuento} align="left" style={{ padding: 0 }} >
-
-                                                                </Typography>
+                                                            <Grid
+                                                                item
+                                                                style={{
+                                                                    padding: 0,
+                                                                }}
+                                                            >
+                                                                <Typography
+                                                                    gutterBottom
+                                                                    className={
+                                                                        classes.precioDescuento
+                                                                    }
+                                                                    align="left"
+                                                                    style={{
+                                                                        padding: 0,
+                                                                    }}
+                                                                ></Typography>
                                                             </Grid>
-                                                            <Grid item >
-                                                                <Typography gutterBottom className={classes.precio} align="left">
-                                                                    {"$" + parseFloat(producto.precio).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " MXN"}
+                                                            <Grid item>
+                                                                <Typography
+                                                                    gutterBottom
+                                                                    className={
+                                                                        classes.precio
+                                                                    }
+                                                                    align="left"
+                                                                >
+                                                                    {"$" +
+                                                                        parseFloat(
+                                                                            producto.precio
+                                                                        ).toLocaleString(
+                                                                            "en-US",
+                                                                            {
+                                                                                minimumFractionDigits: 2,
+                                                                                maximumFractionDigits: 2,
+                                                                            }
+                                                                        ) +
+                                                                        " MXN"}
                                                                 </Typography>
                                                             </Grid>
                                                         </>
-                                                    }
+                                                    )}
                                                 </Grid>
 
                                                 {/* Cantidad */}
-                                                <Grid item xs={12} container spacing={1}>
-                                                    <Grid item xs container alignItems="center" justify="flex-end">
-                                                        <Typography gutterBottom className={classes.cantidad} align="right">
+                                                <Grid
+                                                    item
+                                                    xs={12}
+                                                    container
+                                                    spacing={1}
+                                                >
+                                                    <Grid
+                                                        item
+                                                        xs
+                                                        container
+                                                        alignItems="center"
+                                                        justify="flex-end"
+                                                    >
+                                                        <Typography
+                                                            gutterBottom
+                                                            className={
+                                                                classes.cantidad
+                                                            }
+                                                            align="right"
+                                                        >
                                                             Cantidad
                                                         </Typography>
                                                     </Grid>
 
-                                                    <Grid item xs container justify="flex-end">
-                                                        <OutlinedInput type="number"
-                                                            className={classes.inputSinFlechas}
+                                                    <Grid
+                                                        item
+                                                        xs
+                                                        container
+                                                        justify="flex-end"
+                                                    >
+                                                        <OutlinedInput
+                                                            type="number"
+                                                            className={
+                                                                classes.inputSinFlechas
+                                                            }
                                                             endAdornment={
                                                                 <InputAdornment position="end">
-                                                                    <InertiaLink href={route('cart.store', producto.id)} method="post" as="button" style={{ textDecoration: "none" }} className={classes.inertiaButtonPlusRemove} preserveScroll>
+                                                                    <InertiaLink
+                                                                        href={route(
+                                                                            "cart.store",
+                                                                            producto.id
+                                                                        )}
+                                                                        method="post"
+                                                                        as="button"
+                                                                        style={{
+                                                                            textDecoration:
+                                                                                "none",
+                                                                        }}
+                                                                        className={
+                                                                            classes.inertiaButtonPlusRemove
+                                                                        }
+                                                                        preserveScroll
+                                                                    >
                                                                         <IconButton
                                                                             aria-label="add"
                                                                             component="div"
@@ -511,7 +682,22 @@ export default function Cart({ bDialog }) {
                                                             }
                                                             startAdornment={
                                                                 <InputAdornment position="start">
-                                                                    <InertiaLink href={route('cart.update', producto.id)} method="patch" as="button" style={{ textDecoration: "none" }} className={classes.inertiaButtonPlusRemove} preserveScroll>
+                                                                    <InertiaLink
+                                                                        href={route(
+                                                                            "cart.update",
+                                                                            producto.id
+                                                                        )}
+                                                                        method="patch"
+                                                                        as="button"
+                                                                        style={{
+                                                                            textDecoration:
+                                                                                "none",
+                                                                        }}
+                                                                        className={
+                                                                            classes.inertiaButtonPlusRemove
+                                                                        }
+                                                                        preserveScroll
+                                                                    >
                                                                         <IconButton
                                                                             aria-label="remove"
                                                                             component="div"
@@ -521,15 +707,35 @@ export default function Cart({ bDialog }) {
                                                                     </InertiaLink>
                                                                 </InputAdornment>
                                                             }
-
-                                                            value={producto.pivot.cantidad} />
+                                                            value={
+                                                                producto.pivot
+                                                                    .cantidad
+                                                            }
+                                                        />
                                                     </Grid>
                                                 </Grid>
 
                                                 {/* Precio */}
                                                 <Grid item xs={12}>
-                                                    <Typography gutterBottom className={classes.precioProducto} align="right">
-                                                        {producto.pivot.cantidad + "x$" + calcularTotalProducto(producto).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                                    <Typography
+                                                        gutterBottom
+                                                        className={
+                                                            classes.precioProducto
+                                                        }
+                                                        align="right"
+                                                    >
+                                                        {producto.pivot
+                                                            .cantidad +
+                                                            "x$" +
+                                                            calcularTotalProducto(
+                                                                producto
+                                                            ).toLocaleString(
+                                                                "en-US",
+                                                                {
+                                                                    minimumFractionDigits: 2,
+                                                                    maximumFractionDigits: 2,
+                                                                }
+                                                            )}
                                                     </Typography>
                                                 </Grid>
                                             </Grid>
@@ -539,71 +745,136 @@ export default function Cart({ bDialog }) {
                                     </div>
                                 ))}
                                 {/* TOTAL */}
-                                <Grid item xs={12} container justify="space-between">
+                                <Grid
+                                    item
+                                    xs={12}
+                                    container
+                                    justify="space-between"
+                                >
                                     <Grid item>
-                                        <Typography gutterBottom className={classes.precioTotal} align="left">
+                                        <Typography
+                                            gutterBottom
+                                            className={classes.precioTotal}
+                                            align="left"
+                                        >
                                             Total:
                                         </Typography>
                                     </Grid>
 
                                     <Grid item>
-                                        <Typography gutterBottom className={classes.precioTotal} align="right">
+                                        <Typography
+                                            gutterBottom
+                                            className={classes.precioTotal}
+                                            align="right"
+                                        >
                                             {calcularTotal(auth.cart)}
                                         </Typography>
                                     </Grid>
                                 </Grid>
 
-                                <Grid container justify="center" direction="column">
-                                    <Grid container item justify="center" xs={12}>
-                                        <div style={{ textDecoration: "none" }} className={classes.buttonGrid}>
-                                            <Button variant="contained" color="primary" disableElevation className={classes.button} onClick={handleOpenPago}>
+                                <Grid
+                                    container
+                                    justify="center"
+                                    direction="column"
+                                >
+                                    <Grid
+                                        container
+                                        item
+                                        justify="center"
+                                        xs={12}
+                                    >
+                                        <div
+                                            style={{ textDecoration: "none" }}
+                                            className={classes.buttonGrid}
+                                        >
+                                            <Button
+                                                variant="contained"
+                                                color="primary"
+                                                disableElevation
+                                                className={classes.button}
+                                                onClick={handleOpenPago}
+                                            >
                                                 Proceder pago
                                             </Button>
                                         </div>
                                     </Grid>
 
-                                    <Grid container item className={classes.linkcotizar} justify="center">
+                                    <Grid
+                                        container
+                                        item
+                                        className={classes.linkcotizar}
+                                        justify="center"
+                                    >
                                         {/* <InertiaLink style={{ color: "#595959" }} href="/ejemplo">
                                             Cotizar costo de envío
                                         </InertiaLink> */}
                                     </Grid>
                                 </Grid>
                             </>
-                            :
+                        ) : (
                             <>
                                 {/* CARRITO VACIO */}
-                                <Grid container
+                                <Grid
+                                    container
                                     direction="column"
                                     justifyContent="center"
                                     alignItems="center"
                                     style={{ width: 250, margin: 10 }}
                                 >
                                     <Grid item>
-                                        <ShoppingCartOutlinedIcon style={{ fontSize: 50, color: "#1DA3A8" }} />
+                                        <ShoppingCartOutlinedIcon
+                                            style={{
+                                                fontSize: 50,
+                                                color: "#1DA3A8",
+                                            }}
+                                        />
                                     </Grid>
 
                                     <Grid item>
-                                        <div className={classes.carritoVacioTitulo} style={{ marginTop: "0px" }}>
+                                        <div
+                                            className={
+                                                classes.carritoVacioTitulo
+                                            }
+                                            style={{ marginTop: "0px" }}
+                                        >
                                             TU CARRITO ESTÁ VACÍO
                                         </div>
-                                        <div className={classes.carritoVacio} style={{ marginTop: "0px" }}>
+                                        <div
+                                            className={classes.carritoVacio}
+                                            style={{ marginTop: "0px" }}
+                                        >
                                             Agrega productos a tu carrito
                                         </div>
                                     </Grid>
 
                                     <Grid item>
-                                        <InertiaLink href={route('inicio')} as="button" style={{ textDecoration: "none" }} className={classes.inertiaButtonCart} preserveScroll onClick={toggleDrawer(false)}>
-                                            <Button variant="contained" color="primary" component="div" disableElevation className={classes.buttonCart}>
+                                        <InertiaLink
+                                            href={route("inicio")}
+                                            as="button"
+                                            style={{ textDecoration: "none" }}
+                                            className={
+                                                classes.inertiaButtonCart
+                                            }
+                                            preserveScroll
+                                            onClick={toggleDrawer(false)}
+                                        >
+                                            <Button
+                                                variant="contained"
+                                                color="primary"
+                                                component="div"
+                                                disableElevation
+                                                className={classes.buttonCart}
+                                            >
                                                 IR A LA TIENDA
                                             </Button>
                                         </InertiaLink>
                                     </Grid>
                                 </Grid>
                             </>
-                        }
+                        )}
                     </div>
                 </Drawer>
-            }
+            )}
 
             {/* DIALOG QUE SE MUESTRA CUANDO EL USUARIO NO HA INICIADO SESION */}
             <Dialog
@@ -613,18 +884,35 @@ export default function Cart({ bDialog }) {
                 aria-describedby="alert-dialog-description"
             >
                 <div className={classes.cardInicioSesion}>
-                    <div className={classes.cardText} style={{ marginTop: "30px" }}>
-                        Inicia sesión en comepasto para comenzar a añadir productos a tu carrito
+                    <div
+                        className={classes.cardText}
+                        style={{ marginTop: "30px" }}
+                    >
+                        Inicia sesión en comepasto para comenzar a añadir
+                        productos a tu carrito
                     </div>
 
-                    <div className={classes.inertiaButton} >
-                        <Button variant="contained" color="primary" component="div" disableElevation className={classes.buttonDial} onClick={handleOpenLogin}>
+                    <div className={classes.inertiaButton}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            component="div"
+                            disableElevation
+                            className={classes.buttonDial}
+                            onClick={handleOpenLogin}
+                        >
                             INICIAR SESIÓN
                         </Button>
                     </div>
 
-                    <div className={classes.cardText} style={{ marginBottom: "30px" }}>
-                        <a className={classes.cardLink} onClick={handleOpenRegister}>
+                    <div
+                        className={classes.cardText}
+                        style={{ marginBottom: "30px" }}
+                    >
+                        <a
+                            className={classes.cardLink}
+                            onClick={handleOpenRegister}
+                        >
                             ¿Deseas registrarte?
                         </a>
                         Esto agilizará tus procesos de compra
@@ -632,11 +920,28 @@ export default function Cart({ bDialog }) {
                 </div>
             </Dialog>
 
-            <Login dialog={dialogLogin} handleClose={handleDialogLoginClose} openRegister={handleOpenRegister} openLogin={handleOpenLogin} />
-            <Register dialog={dialogRegister} handleClose={handleDialogRegisterClose} />
-            {dialogPago &&
-                <Pago dialog={dialogPago} handleClose={handleDialogPagoClose} handleCloseCarrito={toggleDrawer(false)} subtotal={auth.cart && auth.cart.length > 0 ? calcularTotal(auth.cart) : 0} />
-            }
+            <Login
+                dialog={dialogLogin}
+                handleClose={handleDialogLoginClose}
+                openRegister={handleOpenRegister}
+                openLogin={handleOpenLogin}
+            />
+            <Register
+                dialog={dialogRegister}
+                handleClose={handleDialogRegisterClose}
+            />
+            {dialogPago && (
+                <Pago
+                    dialog={dialogPago}
+                    handleClose={handleDialogPagoClose}
+                    handleCloseCarrito={toggleDrawer(false)}
+                    subtotal={
+                        auth.cart && auth.cart.length > 0
+                            ? calcularTotal(auth.cart)
+                            : 0
+                    }
+                />
+            )}
         </>
     );
 }

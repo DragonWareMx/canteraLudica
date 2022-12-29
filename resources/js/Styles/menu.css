@@ -1,20 +1,20 @@
-.footer-main{
+.footer-main {
     width: 100%;
     min-height: 108px;
-    background-color: #1DA3A8;
+    background-color: #313131;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px 30px;
 }
 
-.footer-left{
+.footer-left {
     width: 30%;
     align-items: flex-end;
     display: flex;
 }
 
-.footer-middle{
+.footer-middle {
     width: 30%;
     font-family: Atma;
     font-style: normal;
@@ -23,26 +23,27 @@
     line-height: 26px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #d9d9d9;
 }
 
-.footer-right{
+.footer-right {
     width: 30%;
     text-align: end;
+    color: #d9d9d9;
 
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
 }
 
-.footer-icons{
+.footer-icons {
     width: 30%;
     display: flex;
     justify-content: space-between;
     margin: 0px auto 11px auto;
 }
 
-.footer-right a{
+.footer-right a {
     text-decoration: none;
     font-family: Atma;
     font-style: normal;
@@ -50,121 +51,122 @@
     font-size: 14px;
     line-height: 23px;
 
-    color: #FFFFFF;
+    color: #d9d9d9;
 }
 
-.footer-come{
+.footer-come {
     font-family: "Fredoka One";
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
     line-height: 36px;
 
-    color: #FFDE59;
+    color: #ff6607;
     margin-top: 10px;
 }
 
-.footer-copy{
+.footer-copy {
     font-family: Atma;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 23px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 @media (max-width: 1200px) {
     .footer-icons {
-      width: 60%;
+        width: 60%;
     }
-  }
+}
 
-  @media (max-width: 760px) {
+@media (max-width: 760px) {
     .footer-icons {
-      width: 80%;
+        width: 80%;
     }
-  }
+}
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .footer-icons {
-      width: 40%;
+        width: 40%;
     }
-    .footer-left, .footer-right, .footer-middle{
+    .footer-left,
+    .footer-right,
+    .footer-middle {
         width: 100%;
     }
 
-    .footer-left{
-      justify-content: center;
-      margin-bottom: 15px;
+    .footer-left {
+        justify-content: center;
+        margin-bottom: 15px;
     }
 
-    .footer-middle{
-      margin-bottom: 15px;
+    .footer-middle {
+        margin-bottom: 15px;
     }
 
-    .footer-right{
-      justify-content: center;
+    .footer-right {
+        justify-content: center;
     }
-  }
+}
 
-
-  /* Aqui empiezan los estilos de la navbar :v */
-  .main-navbar{
+/* Aqui empiezan los estilos de la navbar :v */
+.main-navbar {
     height: 137px;
     width: 100%;
-    background-color:  #FFFFFF;
+    background-color: #ffffff;
     padding: 0px 5%;
     position: fixed;
     top: 0px;
     transition: height 0.3s;
-  }
+}
 
-  .navbar-sup{
+.navbar-sup {
     height: 78px;
     width: 100%;
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #d3d3d3;
     display: flex;
     align-content: center;
     justify-content: space-between;
-  }
+}
 
-  .navbar-inf{
+.navbar-inf {
     height: 59px;
     width: 100%;
     display: flex;
     align-content: center;
-  }
+}
 
-  .div-logo{
+.div-logo {
     font-family: Fredoka One;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
     line-height: 48px;
-    color: #FFDE59;
+    color: #ffde59;
     display: flex;
     align-items: center;
     position: absolute;
     top: 15px;
-    left: calc((100% / 2) - 108.5px);
-  }
+    left: calc((100% / 2) - 90px);
+}
 
-  .div-logo a{
+.div-logo a {
     text-decoration: none;
-    color: #FFDE59;
-  }
+    color: #ffde59;
+}
 
-  .div-iconos{
+.div-iconos {
     display: flex;
     align-items: center;
-  }
+}
 
-  .div-redes{
+.div-redes {
     display: flex;
     align-items: center;
-  }
+}
 
-  .div-redes .icono{
+.div-redes .icono {
     text-decoration: none;
     font-family: Atma;
     font-style: normal;
@@ -172,26 +174,25 @@
     font-size: 15px;
     line-height: 24px;
 
-    color: #A3A3A3;
+    color: #313131;
     display: flex;
     align-items: center;
-  }
+}
 
-  .div-redes .icono img{
+.div-redes .icono img {
     margin-right: 6px;
-  }
+}
 
-  .links{
+.links {
     width: 60%;
     margin: 0px auto;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-  }
-
-  .links a{
+.links a {
     text-decoration: none;
     font-family: Atma;
     font-style: normal;
@@ -199,29 +200,28 @@
     font-size: 18px;
     line-height: 29px;
 
-    color: #1DA3A8;
+    color: #313131;
     /* esto es el efecto ese feo xd */
     transform: scale(0.95);
     transition: all 700ms;
-  }
+}
 
-  .links a:hover{
-    border-bottom: 2px solid #FFDE59;
+.links a:hover {
+    border-bottom: 2px solid #ff6607;
     /* esto es el efecto ese feo xd */
     transform: scale(1.05);
-  }
+}
 
-  .links-hide{
+.links-hide {
     width: 50%;
     margin: 0px auto;
 
     display: none;
     justify-content: space-between;
     align-items: center;
+}
 
-  }
-
-  .links-hide a{
+.links-hide a {
     text-decoration: none;
     font-family: Atma;
     font-style: normal;
@@ -229,57 +229,57 @@
     font-size: 18px;
     line-height: 29px;
 
-    color: #1DA3A8;
+    color: #313131;
     /* esto es el efecto ese feo xd */
     transform: scale(0.95);
     transition: all 700ms;
-  }
+}
 
-  .links-hide a:hover{
-    border-bottom: 2px solid #FFDE59;
+.links-hide a:hover {
+    border-bottom: 2px solid #ff6607;
     /* esto es el efecto ese feo xd */
     transform: scale(1.05);
-  }
+}
 
-  .content{
+.content {
     padding-top: 137px;
     min-height: calc(100vh - 131px);
     /* transition: height 0.2s; */
-  }
+}
 /*Aqui empiezan los estilos para que se vea chida la navbar chiquita*/
-  .main-navbar.shrinked{
+.main-navbar.shrinked {
     height: 76px;
     transition: height 0.3s;
-  }
+}
 
-  .main-navbar.shrinked .navbar-sup{
+.main-navbar.shrinked .navbar-sup {
     height: 76px;
     border-bottom: 0px;
-  }
+}
 
-  .main-navbar.shrinked .navbar-inf{
+.main-navbar.shrinked .navbar-inf {
     display: none;
-  }
-  .main-navbar.main-navbar.shrinked .div-logo{
+}
+.main-navbar.main-navbar.shrinked .div-logo {
     position: static;
-  }
-  .main-navbar.main-navbar.shrinked .div-redes{
+}
+.main-navbar.main-navbar.shrinked .div-redes {
     display: none;
-  }
+}
 
-  .main-navbar.main-navbar.shrinked .links-hide{
+.main-navbar.main-navbar.shrinked .links-hide {
     display: flex;
-  }
-  /* .content.shrinked{
+}
+/* .content.shrinked{
     margin-top: 76px;
     transition: height 0.2s;
   } */
 
-  /*  Menu para celular */
-  header.mobile{
+/*  Menu para celular */
+header.mobile {
     width: 100%;
     height: 60px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: 0px 4px 4px rgba(200, 200, 200, 0.25);
     display: none;
     position: fixed;
@@ -287,51 +287,51 @@
     left: 0px;
     justify-content: space-between;
     z-index: 999;
-  }
+}
 
-  .mobile .left{
+.mobile .left {
     float: left;
     display: flex;
     align-items: center;
     padding-left: 1vw;
-  }
+}
 
-  .mobile .right{
+.mobile .right {
     float: right;
     display: flex;
     align-content: flex-end;
     padding-right: 1vw;
-  }
+}
 
-  .mobile .left svg{
+.mobile .left svg {
     margin-top: auto;
     margin-bottom: auto;
     margin: 12px;
-  }
+}
 
-  .div-logo-m{
+.div-logo-m {
     font-family: Fredoka One;
     font-style: normal;
     font-weight: normal;
     font-size: 27px;
     line-height: 35px;
-    color: #FFDE59;
+    color: #ff6607;
     display: flex;
     align-items: center;
     position: absolute;
     top: 11.5px;
-    left: calc((100% / 2) - 73.615px);
-  }
+    left: calc((100% / 2) - 60px);
+}
 
-  .div-logo-m a{
+.div-logo-m a {
     text-decoration: none;
-    color: #FFDE59;
-  }
+    color: #ffde59;
+}
 
- .navigation{
+.navigation {
     width: 100%;
     margin-top: 1rem;
-    background-color: #1DA3A8;
+    background-color: #313131;
     margin: 0;
     margin-left: 0;
     padding: 0;
@@ -341,14 +341,13 @@
     display: none;
 }
 
-  .navigation ul{
+.navigation ul {
     margin: 0;
     padding: 0;
     list-style: none;
-
 }
 
-.navigation ul li{
+.navigation ul li {
     display: inline-block;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
@@ -356,40 +355,40 @@
     padding-left: 10vw;
 }
 
-.navigation ul li a{
-  text-decoration: none;
+.navigation ul li a {
+    text-decoration: none;
     font-family: Atma;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 29px;
 
-    color: #FFDE59;
+    color: #d9d9d9;
     /* esto es el efecto ese feo xd */
     transform: scale(0.95);
     transition: all 700ms;
 }
 
-.navigation ul li a:hover{
-  border-bottom: 2px solid #FFDE59;
+.navigation ul li a:hover {
+    border-bottom: 2px solid #ffde59;
     /* esto es el efecto ese feo xd */
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 @media (max-width: 850px) {
-  .content {
-    padding-top: 60px !important;
-  }
+    .content {
+        padding-top: 60px !important;
+    }
 
-  header.mobile{
-    display: flex !important;
-  }
+    header.mobile {
+        display: flex !important;
+    }
 
-  .main-navbar{
-    display: none !important;
-  }
+    .main-navbar {
+        display: none !important;
+    }
 
-  .navigation{
-    display: block !important;
-  }
+    .navigation {
+        display: block !important;
+    }
 }
