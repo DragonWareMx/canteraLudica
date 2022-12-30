@@ -38,7 +38,7 @@ const StyledBadge = withStyles((theme) => ({
     badge: {
         border: `2px solid ${theme.palette.background.paper}`,
         padding: "0 4px",
-        backgroundColor: "#FFDE59",
+        backgroundColor: "#ff6607",
     },
 }))(Badge);
 
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     button: {
-        background: "#ff6607",
+        background: "#313131",
 
         fontFamily: "Atma",
         fontStyle: "normal",
@@ -65,12 +65,13 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "15px",
         lineHeight: "24px",
 
-        color: "#FFFFFF",
+        color: "#d9d9d9",
         width: "100%",
         height: "45px",
 
         "&:hover": {
-            background: "#1DA3A8",
+            background: "#ff6607",
+            color: "#fafafa",
         },
     },
     buttonGrid: {
@@ -99,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "15px",
         lineHeight: "19px",
 
-        color: "#474747",
+        color: "#313131",
         marginRight: 10,
         width: "fit-content",
     },
@@ -110,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "14px",
         lineHeight: "18px",
 
-        color: "#1DA3A8",
+        color: "#ff6607",
     },
     precioDescuento: {
         fontFamily: "Oxygen",
@@ -138,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "13px",
         lineHeight: "16px",
 
-        color: "#595959",
+        color: "#313131",
         marginTop: 10,
         marginRight: 10,
     },
@@ -149,7 +150,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "15px",
         lineHeight: "19px",
 
-        color: "#1DA3A8",
+        color: "#ff6607",
         marginTop: 10,
         marginRight: 10,
         marginLeft: 10,
@@ -178,8 +179,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
     },
     buttonDial: {
-        background: "#1DA3A8",
-        color: "#FFFFFF",
+        background: "#313131",
+        color: "#d9d9d9",
 
         fontFamily: "Atma",
         fontStyle: "normal",
@@ -195,8 +196,8 @@ const useStyles = makeStyles((theme) => ({
         border: "1px solid #E3E3E3",
 
         "&:hover": {
-            background: "#1DA3A8",
-            color: "#FFFFFF",
+            background: "#ff6607",
+            color: "#fafafa",
         },
     },
     inertiaButton: {
@@ -214,7 +215,7 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
     },
     cardText: {
-        color: "#626262",
+        color: "#313131",
 
         fontFamily: "Atma",
         fontStyle: "normal",
@@ -225,7 +226,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
     },
     cardLink: {
-        color: "#1DA3A8",
+        color: "#ff6607",
 
         fontFamily: "Atma",
         fontStyle: "normal",
@@ -250,10 +251,10 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "600",
         fontSize: "20px",
         lineHeight: "49px",
-        color: "#1DA3A8",
+        color: "#ff6607",
     },
     carritoVacio: {
-        color: "#626262",
+        color: "#313131",
 
         fontFamily: "Atma",
         fontStyle: "normal",
@@ -273,8 +274,8 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
     },
     buttonCart: {
-        background: "transparent",
-        color: "#9F9F9F",
+        background: "#313131",
+        color: "#d9d9d9",
 
         fontFamily: "Atma",
         fontStyle: "normal",
@@ -288,8 +289,8 @@ const useStyles = makeStyles((theme) => ({
         border: "1px solid #E3E3E3",
 
         "&:hover": {
-            background: "#1DA3A8",
-            color: "#FFFFFF",
+            background: "#ff6607",
+            color: "#fafafa",
         },
     },
 }));
@@ -825,7 +826,7 @@ export default function Cart({ bDialog }) {
                                         <ShoppingCartOutlinedIcon
                                             style={{
                                                 fontSize: 50,
-                                                color: "#1DA3A8",
+                                                color: "#313131",
                                             }}
                                         />
                                     </Grid>
@@ -888,7 +889,7 @@ export default function Cart({ bDialog }) {
                         className={classes.cardText}
                         style={{ marginTop: "30px" }}
                     >
-                        Inicia sesión en comepasto para comenzar a añadir
+                        Inicia sesión en Cantera Lúdica para comenzar a añadir
                         productos a tu carrito
                     </div>
 
